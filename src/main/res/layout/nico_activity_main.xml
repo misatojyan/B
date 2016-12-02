@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/pink">
+
+        <LinearLayout
+            android:gravity="left|center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_drawer_home"/>
+
+            <ImageView
+                android:id="@+id/iv_login"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/bili_default_avatar"/>
+
+            <TextView
+                android:id="@+id/tv_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_top_default_nickname"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+
+        <ImageButton
+            android:id="@+id/main_toolbar_menu_search"
+            style="@style/AppTheme.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@drawable/ic_toolbar_menu_search"/>
+
+        <ImageButton
+            android:id="@+id/main_toolbar_menu_download"
+            style="@style/AppTheme.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/main_toolbar_menu_search"
+            app:srcCompat="@drawable/ic_toolbar_menu_download"/>
+
+        <ImageButton
+            android:id="@+id/main_toolbar_menu_center"
+            style="@style/AppTheme.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/main_toolbar_menu_download"
+            app:srcCompat="@drawable/ic_menu_top_game_center"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/rl_title_bar"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/rg_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@color/pink"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_live"
+                style="@style/AppTheme.RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/main_page_live"/>
+
+            <RadioButton
+                android:id="@+id/rb_home"
+                style="@style/AppTheme.RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/main_page_home"/>
+
+            <RadioButton
+                android:id="@+id/rb_bangumi"
+                style="@style/AppTheme.RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/main_page_bangumi"/>
+
+            <RadioButton
+                android:id="@+id/rb_category"
+                style="@style/AppTheme.RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/main_page_category"/>
+
+            <RadioButton
+                android:id="@+id/rb_attentions"
+                style="@style/AppTheme.RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/main_page_attentions"/>
+
+            <RadioButton
+                android:id="@+id/rb_discover"
+                style="@style/AppTheme.RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/main_page_discover"/>
+        </RadioGroup>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</RelativeLayout>
